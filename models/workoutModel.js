@@ -10,8 +10,8 @@ const WorkoutSchema = new Schema ({
         default: Date.now
     },
     excercises: [{
-        type: {type: String},
-        name: {type: String},
+        type: {type: String, trim: true, required: "Please select a type of workout."},
+        name: {type: String , trim: true, required: "Please name your workout."},
         duration: {type: Number},
         weight: {type: Number},
         reps: {type: Number},
@@ -33,6 +33,6 @@ WorkoutSchema.virtual("totalDuration").get(function() {
   });
 
 // creating the model we made above 
-const Workout = mongoose.model('Workout', WorkoutSchema)
+const Workout = mongoose.model("Workout", WorkoutSchema)
 // Exporting the workout model
-model.exports = Workout;
+module.exports = Workout;
