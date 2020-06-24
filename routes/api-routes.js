@@ -1,5 +1,5 @@
 let db = require("../models");
-const { Workout } = require("../models")
+// const { Workout } = require("../models")
 
 module.exports = function (app) {
     app.get("/api/workouts", (req, res) => {
@@ -11,10 +11,9 @@ module.exports = function (app) {
             res.json(err);
         })
     })
-
-    app.post("/api/workouts",  (req, res) => {
-        const workout = new Workout(req.body)
-        db.Workout.create(workout)
+    app.post("/api/workouts",  ({body}, res) => {
+        // const workout = new Workout(req.body)
+        db.Workout.create(body)
         .then(Workout => {
             res.json(Workout);
         })
@@ -31,8 +30,7 @@ module.exports = function (app) {
                 res.json(err)
             });
     });
-
-    app.get("/api/exercise", (req, res) => {
+    app.get("/api/workouts/range", (req, res) => {
         db.Workout.find({})
         .then(Workout => {
             res.json(Workout);
