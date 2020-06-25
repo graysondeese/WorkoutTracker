@@ -11,10 +11,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
 
-// Set up promises with mongose
-mongoose.Promise = global.Promise;
-
-mongoose.connect(process.env.MONGODB_URI || "mongodb://user:password1@ds047335.mlab.com:47335/heroku_b4w5vxsk", { useNewUrlParser: true }, {useMongoClient: true});
+mongoose.connect(process.env.MONGODB_URI || "mongodb://user:password1@ds047335.mlab.com:47335/heroku_b4w5vxsk", { useNewUrlParser: true });
 
 // Requring routes
 require("./routes/html-routes.js")(app)
