@@ -47,7 +47,7 @@ npm run server
 
 ## Screenshot
 ***
-<img src="public/Images/homepage.PNG>
+<img src="public/Images/homepage.PNG">
 
 ***
 
