@@ -12,7 +12,7 @@ app.use(express.json());
 app.use(express.static("public"));
 
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", { useNewUrlParser: true });
-// mongoose.connect(process.env.MONGODB_URI || "mongodb://user:password1@ds047335.mlab.com:47335/heroku_b4w5vxsk", { useNewUrlParser: true });
+
 
 // Requring routes
 require("./routes/html-routes.js")(app)
